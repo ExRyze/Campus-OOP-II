@@ -12,8 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import welcome.M_Auth;
-
 public class V_FormLogin extends JFrame {
 	private Dimension dm = getToolkit().getScreenSize();
 	private JTextField textUsername;

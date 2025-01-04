@@ -11,7 +11,7 @@ import category.C_Category;
 import item.C_Item;
 import transaction.C_Transaction;
 import user.C_User;
-import welcome.M_Auth;
+import auth.login.M_Auth;
 
 public class C_Home extends V_Home implements ActionListener {
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy");
@@ -26,7 +26,6 @@ public class C_Home extends V_Home implements ActionListener {
 				getLblJam().setText(" Jam : "+sdt.format(Calendar.getInstance().getTime()));
 			}
 		}));
-		getLblStatus().setText("Pilih menu yang diinginkan");
 		
 		getMntmExit().addActionListener(this);
 		getMntmListCategory().addActionListener(this);
@@ -131,6 +130,7 @@ public class C_Home extends V_Home implements ActionListener {
 
 	public void setSessionAuth(M_Auth sessionAuth) {
 		this.sessionAuth = sessionAuth;
+		getLblStatus().setText("Username : "+this.sessionAuth.getUsername());
 	}
 
 	public Timer getTmTimer() {

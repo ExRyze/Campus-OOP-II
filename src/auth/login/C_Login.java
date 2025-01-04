@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 import home.C_Home;
 import packages.KoneksiJDBC;
 import welcome.C_Welcome;
-import welcome.M_Auth;
 
 public class C_Login extends V_FormLogin implements ActionListener {
 	private KoneksiJDBC konek = new KoneksiJDBC();
@@ -41,9 +40,13 @@ public class C_Login extends V_FormLogin implements ActionListener {
 				ResultSet rs = konek.getQuery(query);
 				rs.next();
 				if (rs.getRow()>0) {
+					M_Auth login1 = new M_Auth();
+					login1.setAdmin_id(rs.getInt("admin_id"));
+					login1.setUsername(rs.getString("username"));
+					login1.setCreated_at(rs.getDate("created_at"));
 					JOptionPane.showMessageDialog(this, "Login berhasil!");
 					C_Home menu = new C_Home();
-					menu.setSessionAuth(login);
+					menu.setSessionAuth(login1);
 					menu.setVisible(true);
 					dispose();
 				} else {
