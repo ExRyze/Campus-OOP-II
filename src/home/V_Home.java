@@ -25,10 +25,19 @@ public class V_Home extends JFrame {
 	private JLabel lblJam;
 	private JLabel lblStatus;
 	private JDesktopPane desktopPane;
-	private JMenuItem mntmDataBuku;
 	private JMenu mnFile;
-	private JMenuItem mntmTambahBuku;
 	private JMenuItem mntmExit;
+	private JMenu mnItem;
+	private JMenuItem mntmListCategory;
+	private JMenuItem mntmNewCategory;
+	private JMenuItem mntmListItem;
+	private JMenuItem mntmNewItem;
+	private JMenu mnUser;
+	private JMenuItem mntmListUser;
+	private JMenuItem mntmNewUser;
+	private JMenu mnTransaction;
+	private JMenuItem mntmListTransaction;
+	private JMenuItem mntmNewTransaction;
 	
 	public V_Home() {
 		super("System Inventaris");
@@ -67,40 +76,103 @@ public class V_Home extends JFrame {
 		menuBar.add(mnFile);
 		
 		mntmExit = new JMenuItem("Exit");
-		mntmExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_DOWN_MASK));
+		mntmExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, InputEvent.CTRL_DOWN_MASK));
 		mnFile.add(mntmExit);
 		
-		JMenu mnBuku = new JMenu("Buku");
-		menuBar.add(mnBuku);
+		JMenu mnCategory = new JMenu("Category");
+		menuBar.add(mnCategory);
 		
-		JMenu mnDataBuku = new JMenu("Data Buku");
-		mnBuku.add(mnDataBuku);
+		mntmListCategory = new JMenuItem("List Category");
+		mnCategory.add(mntmListCategory);
 		
-		mntmDataBuku = new JMenuItem("Daftar Data Buku");
-		mntmDataBuku.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK));
-		mnDataBuku.add(mntmDataBuku);
+		mntmNewCategory = new JMenuItem("New Category");
+		mnCategory.add(mntmNewCategory);
 		
-		mntmTambahBuku = new JMenuItem("Tambah Data Buku");
-		mntmTambahBuku.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));
-		mnDataBuku.add(mntmTambahBuku);
+		mnItem = new JMenu("Item");
+		menuBar.add(mnItem);
+		
+		mntmListItem = new JMenuItem("List Item");
+		mnItem.add(mntmListItem);
+		
+		mntmNewItem = new JMenuItem("New Item");
+		mnItem.add(mntmNewItem);
+		
+		mnUser = new JMenu("User");
+		menuBar.add(mnUser);
+		
+		mntmListUser = new JMenuItem("List User");
+		mnUser.add(mntmListUser);
+		
+		mntmNewUser = new JMenuItem("New User");
+		mnUser.add(mntmNewUser);
+		
+		mnTransaction = new JMenu("Transaction");
+		menuBar.add(mnTransaction);
+		
+		mntmListTransaction = new JMenuItem("List Transaction");
+		mnTransaction.add(mntmListTransaction);
+		
+		mntmNewTransaction = new JMenuItem("New Item");
+		mnTransaction.add(mntmNewTransaction);
 	}
 	
-	public JMenuItem getMntmTambahBuku() {
-		return mntmTambahBuku;
+	public JMenuItem getMntmListCategory() {
+		return mntmListCategory;
 	}
-	public JMenuItem getMntmDataBuku() {
-		return mntmDataBuku;
+
+	public void setMntmListCategory(JMenuItem mntmListCategory) {
+		this.mntmListCategory = mntmListCategory;
 	}
+
+	public JMenuItem getMntmNewCategory() {
+		return mntmNewCategory;
+	}
+
+	public void setMntmNewCategory(JMenuItem mntmNewCategory) {
+		this.mntmNewCategory = mntmNewCategory;
+	}
+
+	public JMenuItem getMntmListItem() {
+		return mntmListItem;
+	}
+
+	public void setMntmListItem(JMenuItem mntmListItem) {
+		this.mntmListItem = mntmListItem;
+	}
+
+	public JMenuItem getMntmNewItem() {
+		return mntmNewItem;
+	}
+
+	public void setMntmNewItem(JMenuItem mntmNewItem) {
+		this.mntmNewItem = mntmNewItem;
+	}
+
 	public JLabel getLblJam() {
 		return lblJam;
 	}
+	
 	public JLabel getLblStatus() {
 		return lblStatus;
 	}
+	
 	public JLabel getLblTanggal() {
 		return lblTanggal;
 	}
+	
 	public JMenuItem getMntmExit() {
 		return mntmExit;
+	}
+	public JMenuItem getMntmListTransaction() {
+		return mntmListTransaction;
+	}
+	public JMenuItem getMntmNewTransaction() {
+		return mntmNewTransaction;
+	}
+	public JMenuItem getMntmListUser() {
+		return mntmListUser;
+	}
+	public JMenuItem getMntmNewUser() {
+		return mntmNewUser;
 	}
 }

@@ -10,7 +10,7 @@ public class KoneksiJDBC {
 	private String port = "3306";
 	private String user = "root";
 	private String pass = "";
-	private String db = "pbo_buku";
+	private String db = "pbo_inventaris";
 	
 	public boolean isKonek() {
 		try {
