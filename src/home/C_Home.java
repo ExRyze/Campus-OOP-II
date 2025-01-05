@@ -21,11 +21,12 @@ public class C_Home extends V_Home implements ActionListener {
 	
 	public C_Home() {
 		getLblTanggal().setText("Tanggal : "+sdf.format(Calendar.getInstance().getTime()));
-		setTmTimer(new Timer(500, new ActionListener() {
+		tmTimer = new Timer(500, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				getLblJam().setText(" Jam : "+sdt.format(Calendar.getInstance().getTime()));
 			}
-		}));
+		});
+		tmTimer.start();
 		
 		getMntmExit().addActionListener(this);
 		getMntmListCategory().addActionListener(this);
@@ -44,10 +45,10 @@ public class C_Home extends V_Home implements ActionListener {
 		}
 		else if (e.getSource() == getMntmListCategory()) {
 			C_Category category = new C_Category();
-			getContentPane().add(category);
+			this.getDesktopPane().add(category);
 			category.setVisible(true);
 			try {
-				category.setMaximum(true);;
+				category.setMaximum(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -56,7 +57,7 @@ public class C_Home extends V_Home implements ActionListener {
 		else if (e.getSource() == getMntmNewCategory()) {
 			C_Category category = new C_Category();
 			try {
-				category.tambah(true);;
+				category.tambah(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -64,7 +65,7 @@ public class C_Home extends V_Home implements ActionListener {
 		}
 		else if (e.getSource() == getMntmListItem()) {
 			C_Item item = new C_Item();
-			getContentPane().add(item);
+			this.getDesktopPane().add(item);
 			item.setVisible(true);
 			try {
 				item.setMaximum(true);
@@ -84,10 +85,10 @@ public class C_Home extends V_Home implements ActionListener {
 		}
 		else if (e.getSource() == getMntmListUser()) {
 			C_User user = new C_User();
-			getContentPane().add(user);
+			this.getDesktopPane().add(user);
 			user.setVisible(true);
 			try {
-				user.setMaximum(true);;
+				user.setMaximum(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -96,7 +97,7 @@ public class C_Home extends V_Home implements ActionListener {
 		else if (e.getSource() == getMntmNewUser()) {
 			C_User user = new C_User();
 			try {
-				user.tambah(true);;
+				user.tambah(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -104,10 +105,10 @@ public class C_Home extends V_Home implements ActionListener {
 		}
 		else if (e.getSource() == getMntmListTransaction()) {
 			C_Transaction transaction = new C_Transaction();
-			getContentPane().add(transaction);
+			this.getDesktopPane().add(transaction);
 			transaction.setVisible(true);
 			try {
-				transaction.setMaximum(true);;
+				transaction.setMaximum(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -116,7 +117,7 @@ public class C_Home extends V_Home implements ActionListener {
 		else if (e.getSource() == getMntmNewTransaction()) {
 			C_Transaction transaction = new C_Transaction();
 			try {
-				transaction.tambah(true);;
+				transaction.tambah(true);
 			} catch (Exception ex) {
 				System.out.println(ex);
 				return;
@@ -124,20 +125,8 @@ public class C_Home extends V_Home implements ActionListener {
 		}
 	}
 
-	public M_Auth getSessionAuth() {
-		return sessionAuth;
-	}
-
 	public void setSessionAuth(M_Auth sessionAuth) {
 		this.sessionAuth = sessionAuth;
 		getLblStatus().setText("Username : "+this.sessionAuth.getUsername());
-	}
-
-	public Timer getTmTimer() {
-		return tmTimer;
-	}
-
-	public void setTmTimer(Timer tmTimer) {
-		this.tmTimer = tmTimer;
 	}
 }

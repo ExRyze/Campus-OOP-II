@@ -163,16 +163,28 @@ public class V_Home extends JFrame {
 	public JMenuItem getMntmExit() {
 		return mntmExit;
 	}
+	
 	public JMenuItem getMntmListTransaction() {
 		return mntmListTransaction;
 	}
+	
 	public JMenuItem getMntmNewTransaction() {
 		return mntmNewTransaction;
 	}
+	
 	public JMenuItem getMntmListUser() {
 		return mntmListUser;
 	}
+	
 	public JMenuItem getMntmNewUser() {
 		return mntmNewUser;
+	}
+
+	public JDesktopPane getDesktopPane() {
+		return desktopPane;
+	}
+
+	public void setDesktopPane(JDesktopPane desktopPane) {
+		this.desktopPane = desktopPane;
 	}
 }

@@ -22,7 +22,7 @@ public class C_Login extends V_FormLogin implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == getBtnLogin()) {
 			login();
-		}
+			dispose();		}
 		if(e.getSource() == getBtnBatal()) {
 			C_Welcome welcome = new C_Welcome();
 			welcome.setVisible(true);
@@ -48,7 +48,6 @@ public class C_Login extends V_FormLogin implements ActionListener {
 					C_Home menu = new C_Home();
 					menu.setSessionAuth(login1);
 					menu.setVisible(true);
-					dispose();
 				} else {
 					JOptionPane.showMessageDialog(this, "Login gagal!");
 					return;
